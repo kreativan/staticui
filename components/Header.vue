@@ -5,7 +5,7 @@
         <div class="uk-navbar-left">
           <nuxt-link to="/" class="logo uk-flex uk-flex-middle uk-link-reset">
             <Logo class="uk-margin-small-right" />
-            <div class="uk-h3 uk-margin-remove">Static UI</div>
+            <div class="uk-h3 uk-margin-remove uk-text-bold">Static UI</div>
           </nuxt-link>
         </div>
         <div class="uk-navbar-center">
