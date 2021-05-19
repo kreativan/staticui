@@ -1,27 +1,37 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        static-ui
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
+  <div class="uk-container">
+    <div class="uk-section uk-flex uk-flex-middle uk-flex-center uk-text-center" uk-height-viewport="expand: true">
+      <div>
+        <Logo />
+        <h1 class="uk-heading-large">
+          Static UI
+        </h1>
+        <div class="uk-margin-medium-top uk-flex uk-flex-center">
+          <a href="https://nuxtjs.org" 
+            class="uk-button uk-button-default uk-margin-right"
+            target="_blank" 
+            rel="nofollow noopener"
+            title="Nuxt.js"
+          >
+            Nuxt.js
+          </a>
+          <a href="https://vuejs.org/" 
+            class="uk-button uk-button-default uk-margin-right"
+            target="_blank" 
+            rel="nofollow noopener"
+            title="Nuxt.js"
+          >
+            Vue.js
+          </a>
+          <a href="https://github.com/kreativan" 
+            class="uk-button uk-button-default"
+            target="_blank" 
+            rel="nofollow noopener"
+            title="Kreativan Github"
+          >
+            Kreativan
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -31,51 +41,22 @@
 export default {
   head() {
     return {
+      title: "Static UI",
+      meta: [
+        { 
+          hid: 'description', 
+          name: 'description', 
+          content: 'Kreativan blueprint for building static websites using nuxt.js and uikit framework' 
+        },
+      ],
       script: [
         { src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' }
       ],
     };
-  },
+  }
 }
 </script>
 
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
+<style lang="less">
 
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
 </style>
