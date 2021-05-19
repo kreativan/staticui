@@ -19,6 +19,8 @@ export default {
   computed: {
     breadcrumbs () {
       const pathArray = this.$route.path.split('/')
+      let index = pathArray.length;
+      if(pathArray[index] !== "") pathArray.pop()
       pathArray.shift()
       const breadcrumbs = pathArray.reduce((breadcrumbArray, path, idx) => {
         breadcrumbArray.push({

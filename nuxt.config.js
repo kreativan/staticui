@@ -11,7 +11,12 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Kreativan blueprint for building static websites using nuxt.js' },
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'Kreativan blueprint for building static websites using nuxt.js',
+      },
     ],
     link: [
       {
@@ -47,6 +52,8 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
+    // nuxt redirect module
+    '@nuxtjs/redirect-module',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -57,4 +64,13 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+
+  // Requires module @nuxtjs/redirect-module
+  redirect: [
+    {
+      from: '^.*(?<!/)$',
+      to: (from, req) => req.url + '/',
+    },
+  ],
+
 }

@@ -1,20 +1,41 @@
 <template>
   <ul class="uk-navbar-nav">
-    <li>
-      <nuxt-link to="/">Home</nuxt-link>
-    </li>
-    <li>
-      <nuxt-link to="/basic-page">Basic Page</nuxt-link>
-    </li>
-    <li>
-      <nuxt-link to="/blog">Blog</nuxt-link>
-    </li>
+    <template v-for='(item, index) in menu'>
+      <li :class="{ 'uk-active': $route.name == item.name }" :key='index'>
+        <nuxt-link :to='item.href'>
+          {{ item.title }}
+        </nuxt-link>
+      </li>
+    </template>
   </ul>
 </template>
 
 <script>
-export default {
-
+export default {  
+  data() {
+    return {
+      menu: [
+        {
+          title: 'Home',
+          name: 'index',
+          href: '/',
+          active: this.$route.name === 'home' ? true :false
+        },
+        {
+          title: 'Basic Page',
+          name: 'basic-page',
+          href: '/basic-page/',
+          active: this.$route.name === 'basic-page' ? true :false
+        },
+        {
+          title: 'Blog',
+          name: 'blog',
+          href: '/blog/',
+          active: this.$route.name === 'blog' ? true :false
+        },
+      ]
+    }
+  }
 }
 </script>
 
