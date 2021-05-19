@@ -1,5 +1,5 @@
 <template>
-  <footer id="footer" class="uk-section">
+  <footer id="footer" class="uk-section uk-section-small">
     <div class="uk-container">
       <p class="uk-text-muted uk-text-center">
         made with <span class="uk-text-success">nuxt.js</span>, by kreativan
