@@ -8,7 +8,7 @@
         </h1>
         <div class="uk-margin-medium-top uk-flex uk-flex-center">
           <a href="https://nuxtjs.org" 
-            class="uk-button uk-button-default uk-margin-right"
+            class="uk-button uk-button-default uk-button-large uk-margin-right"
             target="_blank" 
             rel="nofollow noopener"
             title="Nuxt.js"
@@ -16,20 +16,12 @@
             Nuxt.js
           </a>
           <a href="https://vuejs.org/" 
-            class="uk-button uk-button-default uk-margin-right"
+            class="uk-button uk-button-default uk-button-large uk-margin-right"
             target="_blank" 
             rel="nofollow noopener"
             title="Nuxt.js"
           >
             Vue.js
-          </a>
-          <a href="https://github.com/kreativan" 
-            class="uk-button uk-button-default"
-            target="_blank" 
-            rel="nofollow noopener"
-            title="Kreativan Github"
-          >
-            Kreativan
           </a>
         </div>
       </div>

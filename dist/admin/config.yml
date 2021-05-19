@@ -10,9 +10,9 @@ collections:
     label: 'Pages'
     format: 'frontmatter'
     files: 
-      - label: 'Hello World'
-        name: 'hello'
-        file: 'content/hello.md'
+      - label: 'Basic Page'
+        name: 'basic-page'
+        file: 'content/basic-page.md'
         fields:
           - {label: Title, name: title, widget: string}
           - {label: Page Body, name: body, widget: markdown}
