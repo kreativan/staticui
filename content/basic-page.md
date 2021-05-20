@@ -24,13 +24,12 @@ If `/pages/basic-page.vue` does NOT exist, content will be rendered by `/pages/_
 <template>
   <main id="main" class="uk-section">
     <div class="uk-container">
-
-      <SlugError v-if='error' :error='error' />
       
-      <div v-if='!error' class="uk-margin-medium-bottom">
-        <h1 class="uk-heading-small">{{ headline }}</h1>
-        <Breadcrumb :title="headline" />
+      <div class="uk-margin-medium-bottom">
+        <h1 class="uk-heading-small">{{ page.title }}</h1>
+        <Breadcrumb :title="page.title" />
       </div>
+
       <nuxt-content :document="page" />
 
     </div>
@@ -51,25 +50,12 @@ export default {
       ]
     }
   },
-  data() {
-    return {
-      slug: this.$route.params.slug,
-      error: '',
-      page: {}
-    }
-  },
-  computed: {
-    headline() {
-      return this.page.title ? this.page.title : this.slug
-    }
-  },
-  async fetch() {
+  async asyncData({ $content, params, error }) {
     try {
-      const page = await this.$content(this.slug).fetch()
-      this.page = page; 
-    } catch (error) {
-      console.log(error);
-      this.error = `/content/${this.slug}.md not found`;
+      const page = await $content(params.slug).fetch()
+      return { page }
+    } catch (e) {
+      error({ statusCode: 404, message: 'Post not found' })
     }
   }
 }
