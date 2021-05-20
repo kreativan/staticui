@@ -1,5 +1,5 @@
 <template>
-  <div id="header">
+  <header id="header">
     <div class="uk-container">
       <div class="uk-navbar-container uk-navbar" uk-navbar>
         <div class="uk-navbar-left">
@@ -18,7 +18,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </header>
 </template>
 
 <script>

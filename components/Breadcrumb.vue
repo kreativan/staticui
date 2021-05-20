@@ -5,34 +5,50 @@
         Home
       </nuxt-link>
     </li>
-    <li v-for="(item, i) in breadcrumbs" :key="i" class="item">
-      <nuxt-link :to="item.to" class="title">
+    <li v-for="(item, index) in breadcrumbs" :key="index">
+      <nuxt-link :to="item.path" :title='item.title'>
         {{ item.title }}
       </nuxt-link>
+    </li>
+    <li v-if='title'>
+     <span>{{ title }}</span>
     </li>
   </ul>
 </template>
 
 <script>
 export default {
-  props: ['title'],
+  props: ['title', 'align'],
+  methods: {
+    async getPageData(slug, parent = '') {
+      const data = (parent != '') ? `${parent}, ${slug}` : slug
+      const page = await this.$content(data)
+      .only(['title', 'path'])
+      .fetch()
+      console.log(page)
+      return page
+    }
+  },
   computed: {
     breadcrumbs () {
+      const crumbs = [];
       const pathArray = this.$route.path.split('/')
-      let index = pathArray.length;
-      if(pathArray[index] !== "") pathArray.pop()
-      pathArray.shift()
-      const breadcrumbs = pathArray.reduce((breadcrumbArray, path, idx) => {
-        breadcrumbArray.push({
-          to: breadcrumbArray[idx - 1]
-            ? '/' + breadcrumbArray[idx - 1].path + '/' + path
-            : '/' + path,
-          title: this.title
-        })
-        return breadcrumbArray
-      }, [])
-      return breadcrumbs
-    }
+      const cleanArray = pathArray.filter(key => key != '')
+
+      let path = ''
+      let title = ''
+
+      cleanArray.forEach((param, index) => {
+        path = `${path}/${param}`
+        title = param.replace(/-/g, ' ');
+        title = param[0].toUpperCase() + title.substring(1);
+        crumbs.push({title: title, path: path + "/"})
+      })
+
+      if(this.title) crumbs.pop()
+
+      return crumbs
+    },
   }
 }
 </script>

@@ -1,6 +1,8 @@
 ---
 title: Blog Post 2
+image: 'github-white.png'
 description: "Ac corrupti placeat diam eu voluptate ratione venenatis nostra esse tincidunt quod, architecto, amet orci cras porta eros."
+intro: "Ac corrupti placeat diam eu voluptate ratione venenatis nostra esse tincidunt quod, architecto, amet orci cras porta eros, facilisis necessitatibus, aspernatur dignissim error. Pariatur quaerat natus fugiat."
 ---
 
 Ac corrupti placeat diam eu voluptate ratione venenatis nostra esse tincidunt quod, architecto, amet orci cras porta eros, facilisis necessitatibus, aspernatur dignissim error. Pariatur quaerat natus fugiat. Sagittis et quod dolorum cursus, laboris libero! Harum! Curae! Vestibulum neque, urna quisque? Molestie, ante, recusandae ultrices? Eget? Natoque dictumst consequuntur! Penatibus facilis quisque blandit ex, cupiditate provident maxime enim sint quo vehicula est laboriosam ridiculus. Ratione ducimus? Pellentesque animi felis nisi curae! Aliquet praesent! Placerat porttitor! Expedita, iaculis? Iaculis. Excepteur orci sodales occaecati ullam distinctio ligula! Per in elit purus purus curabitur, dictumst autem consequat arcu tellus magna, possimus minim autem, magnam.

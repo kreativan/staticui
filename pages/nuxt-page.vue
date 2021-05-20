@@ -1,11 +1,6 @@
 <template>
   <main id="main">
-    <div id="page-heading" class="uk-section uk-background-muted">
-      <div class="uk-container">
-        <h1 class="uk-heading-small">{{ page.title }}</h1>
-        <Breadcrumb :title="page.title" />
-      </div>
-    </div>
+    <PageHeading :title='page.title' />
     <section class="uk-section">
       <div class="uk-container">
         <nuxt-content :document="page" />

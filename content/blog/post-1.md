@@ -1,6 +1,8 @@
 ---
 title: Blog Post 1
+image: 'github-wide.png'
 description: "Curae omnis? Minima aut. Sollicitudin dicta aut aptent habitant, iste quasi aliqua, in atque potenti, ipsam gravida ultrices consequuntur natoque natus"
+intro: 'Curae omnis? Minima aut. Sollicitudin dicta aut aptent habitant, iste quasi aliqua, in atque potenti, ipsam gravida ultrices consequuntur natoque natus, fugit saepe quia laboriosam class provident perspiciatis cupiditate esse posuere consequatur!'
 ---
 
 Curae omnis? Minima aut. Sollicitudin dicta aut aptent habitant, iste quasi aliqua, in atque potenti, ipsam gravida ultrices consequuntur natoque natus, fugit saepe quia laboriosam class provident perspiciatis cupiditate esse posuere consequatur! Irure aptent a mollit sollicitudin quos, risus? Libero, impedit sapien ornare iure quasi dignissimos, nam saepe a blanditiis accusamus! Wisi anim vivamus, ullamcorper amet magni ullam? Assumenda ipsam cupiditate occaecat? Irure? Dolore! Rhoncus, etiam quasi diam eros vel, rerum eum atque nemo vero, ac, elementum, aspernatur quibusdam aptent hic possimus fuga minus, sint, faucibus nisi fames ultricies dolor! Aptent facilisis quibusdam volutpat labore, pretium, sit aut, quia gravida.
