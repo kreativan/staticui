@@ -22,6 +22,12 @@ export default {
           active: this.$route.name === 'home' ? true :false
         },
         {
+          title: 'Nuxt Page',
+          name: 'page',
+          href: '/nuxt-page/',
+          active: this.$route.name === 'nuxt-page' ? true :false
+        },
+        {
           title: 'Basic Page',
           name: 'basic-page',
           href: '/basic-page/',

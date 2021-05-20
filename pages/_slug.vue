@@ -1,26 +1,3 @@
----
-title: Basic Page
-description: "Dynamic page routing with _slug"
----
-
-Dynamic routing with `_slug.vue`.     
-Any file in content folder will be automatically loaded, unless there is a specific page file for it in pages directory.     
-Eg: `/content/basic-page.md` can be accesed by visiting `/basic-page/` url.     
-If `/pages/basic-page.vue` does NOT exist, content will be rendered by `/pages/_slug.vue`    
-
-```md[/content/basic-page.md]
----
-title: Basic Page
-description: "Dynamic page routing with _slug.vue"
----
-
-Dynamic routing with `_slug.vue`.     
-Any file in content folder will be automatically loaded, unless there is a specific page file for it in pages directory.     
-Eg: `/content/basic-page.md` can be accesed by visiting `/basic-page/` url.     
-If `/pages/basic-page.vue` does NOT exist, content will be rendered by `/pages/_slug.vue`   
-```
-
-```html[/pages/_slug.vue]
 <template>
   <main id="main" class="uk-section">
     <div class="uk-container">
@@ -78,4 +55,3 @@ export default {
 <style lang="less">
 
 </style>
-```

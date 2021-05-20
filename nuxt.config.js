@@ -60,7 +60,13 @@ export default {
   axios: {},
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
-  content: {},
+  content: {
+    markdown: {
+      prism: {
+        theme: '~/assets/css/prism-material-oceanic.css',
+      },
+    },
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
@@ -72,5 +78,4 @@ export default {
       to: (from, req) => req.url + '/',
     },
   ],
-
 }

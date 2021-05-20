@@ -1,13 +1,16 @@
 <template>
-  <main id="main" class="uk-section">
-    <div class="uk-container">
-      <div>
+  <main id="main">
+    <div id="page-heading" class="uk-section uk-background-muted">
+      <div class="uk-container">
         <h1 class="uk-heading-small">{{ page.title }}</h1>
         <Breadcrumb :title="page.title" />
       </div>
-      <hr class="uk-margin-medium" />
-      <nuxt-content :document="page" />
     </div>
+    <section class="uk-section">
+      <div class="uk-container">
+        <nuxt-content :document="page" />
+      </div>
+    </section>
   </main>
 </template>
 
@@ -31,7 +34,7 @@ export default {
     }
   },
   async fetch() {
-    const page = await this.$content('basic-page').fetch()
+    const page = await this.$content('nuxt-page').fetch()
     this.page = page;
   }
 }
