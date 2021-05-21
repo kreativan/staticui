@@ -9,8 +9,8 @@
     <template>
       <hr class="uk-margin-medium" />
       <PrevNext 
-        :prevPage='prevPage'
-        :nextPage='nextPage'
+        :prevPage='prev'
+        :nextPage='next'
       />
     </template>
   </article>
@@ -58,12 +58,6 @@ export default {
       } catch (error) {
         return false;
       }
-    },
-    prevPage() {
-      return this.prev
-    },
-    nextPage() {
-      return this.next
     }
   },
 }

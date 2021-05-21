@@ -1,4 +1,5 @@
 ---
+createdAt: 5/20/2021
 title: Blog Post 3
 image: 'vue-features.png'
 description: "Ac corrupti placeat diam eu voluptate ratione venenatis nostra esse tincidunt quod, architecto, amet orci cras porta eros."

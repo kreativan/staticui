@@ -1,4 +1,5 @@
 ---
+createdAt: 5/18/2021
 title: Blog Post 1
 image: 'nuxt.png'
 description: "Curae omnis? Minima aut. Sollicitudin dicta aut aptent habitant, iste quasi aliqua, in atque potenti, ipsam gravida ultrices consequuntur natoque natus"
