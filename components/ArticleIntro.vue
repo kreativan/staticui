@@ -1,10 +1,16 @@
 <template>
   <article class="uk-article uk-grid uk-flex-middle" uk-grid>
     <div v-if='image' class="uk-width-1-2@m">
-      <img :srcSet="image.srcSet" :src="image.src" />
+      <nuxt-link :to='article.path + "/"' :title="article.title">
+        <img :srcSet="image.srcSet" :src="image.src" />
+      </nuxt-link>
     </div>
-    <div class="uk-width-expand@m" :class="{'uk-flex-first': index % 2 != 0}">
-      <h2 class="uk-article-title">{{ article.title }}</h2>
+    <div class="uk-width-expand@m">
+      <h2 class="uk-article-title">
+        <nuxt-link :to='article.path + "/"' :title="article.title" class="uk-link-heading">
+          {{ article.title }}
+          </nuxt-link>
+      </h2>
       <span class="uk-text-meta">{{ meta }}</span>
       <p>{{ article.intro }}</p>
       <nuxt-link :to='article.path + "/"' class="uk-button uk-button-text">

@@ -1,13 +1,34 @@
 <template>
   <main id="main">
+  
     <PageHeading :title="page.title" />
+
     <div class="uk-section">
-      <div class="uk-container">
+      <div class="uk-container" uk-scrollspy="target: .uk-article; cls: uk-animation-slide-bottom-small; delay: 200">
+
         <nuxt-content :document="page" />
-        <template v-for='(post, index) in posts'>
-          <hr v-if='index > 0' class="uk-margin-medium" :key='index' />
-          <ArticleIntro :key='post.slug' :article='post' :index='index'  />
+
+        <template v-for='(posts, i) in postsArray'>
+          <div class="uk-margin-medium-top" :key='i'>
+            <hr v-if='i > 0' class="uk-margin-medium" />
+            <template v-for='(post, index) in posts'>
+              <hr v-if='index > 0' class="uk-margin-medium" :key='index' />
+              <ArticleIntro :key='post.slug' :article='post' :index='index' />
+            </template>
+          </div>
         </template>
+
+        <div class="uk-margin-medium-top uk-text-muted uk-text-center">
+          Showing {{ limit }} of {{ total }}
+        </div>
+
+        <div v-if='!end' class="uk-text-center uk-margin">
+          <button @click="loadMore()" class="uk-button uk-button-primary uk-width-small">
+            <span v-show='spinner' uk-spinner></span>
+            <span v-show='!spinner'>More</span>
+          </button>
+        </div>
+
       </div>
     </div>
   </main>
@@ -30,7 +51,13 @@ export default {
   data() {
     return {
       page: {},
-      posts: []
+      postsArray: [],
+      limit: 2, // number of pages to load initialy
+      load: 2, // number of pages to load on click
+      button: 'Load More',
+      spinner: false,
+      end: true,
+      total: 0,
     }
   },
   async created() {
@@ -38,10 +65,45 @@ export default {
     this.page = page
   },
   async fetch() {
+
+    const all = await this.$content('blog').fetch()
+    this.total = all.length
+    
     const posts = await this.$content('blog')
     .sortBy("createdAt", 'desc')
+    .limit(this.limit)
     .fetch()
-    this.posts = posts
+    
+    this.postsArray.push(posts)
+
+    if(this.total > this.limit) this.end = false
+
+  },
+  methods: {
+    async loadMore() {
+
+      this.spinner = true;
+
+      const posts = await this.$content('blog')
+      .sortBy("createdAt", 'desc')
+      .skip(this.limit)
+      .limit(this.load)
+      .fetch()
+
+      this.spinner = false
+
+      if(posts.length < 1) {
+        this.end = true
+        return
+      }
+
+      if(this.limit + posts.length === this.total) this.end = true
+
+      this.postsArray.push(posts)
+
+      this.limit = this.limit + this.load
+
+    }
   },
 }
 </script>

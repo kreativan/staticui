@@ -4,7 +4,7 @@
       <nuxt-link v-if='prev' :to='`/${root}/${prev.slug}/`'>
         <i uk-icon="arrow-left"></i>
         {{ prev.title }}
-      </nuxt-link>
+      </nuxt-link >
     </div>
     <div class="next-article">
       <nuxt-link v-if='next' :to='`/${root}/${next.slug}/`'>

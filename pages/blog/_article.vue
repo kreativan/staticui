@@ -1,7 +1,7 @@
 <template>
   <article class="uk-article">
-    <h1 class="uk-article-title uk-text-cente">{{ page.title }}</h1>
-    <p class="uk-article-meta">
+    <h1 class="uk-article-title uk-text-center">{{ page.title }}</h1>
+    <p class="uk-article-meta uk-text-center">
       {{ meta }}
     </p>
     <img v-if="image" :srcSet="image.srcSet" :src="image.src" class="uk-margin-bottom" />
