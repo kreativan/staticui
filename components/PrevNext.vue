@@ -1,10 +1,10 @@
 <template>
   <div class="prev-next-article uk-flex uk-flex-between uk-link-heading">
     <div class="prev-article"> 
-      <nuxt-link v-if='prevLink' :to='prevLink'>{{ prevTitle }}</nuxt-link>
+      <nuxt-link v-if='prevPage' :to='prevLink'>{{ prevTitle }}</nuxt-link>
     </div>
     <div class="next-article">
-       <nuxt-link v-if='nextLink' :to='nextLink'>{{ nextTitle }}</nuxt-link>
+       <nuxt-link v-if='nextPage' :to='nextLink'>{{ nextTitle }}</nuxt-link>
     </div>
   </div>
 </template>
