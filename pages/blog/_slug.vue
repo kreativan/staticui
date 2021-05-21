@@ -33,11 +33,11 @@ export default {
   },
   async asyncData({ $content, params, error }) {
     try {
-      const page = await $content(`blog`, params.article).fetch()
+      const page = await $content(`blog`, params.slug).fetch()
       const [prev, next] = await $content('blog')
       .only(['title', 'slug'])
       .sortBy('createdAt', 'asc')
-      .surround(params.article, { before: 1, after: 1})
+      .surround(params.slug, { before: 1, after: 1})
       .fetch()
       return { page, prev, next }
     } catch (e) {

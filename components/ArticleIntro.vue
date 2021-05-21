@@ -7,7 +7,7 @@
       <h2 class="uk-article-title">{{ article.title }}</h2>
       <span class="uk-text-meta">{{ meta }}</span>
       <p>{{ article.intro }}</p>
-      <nuxt-link :to='article.path' class="uk-button uk-button-text">
+      <nuxt-link :to='article.path + "/"' class="uk-button uk-button-text">
         Read More
       </nuxt-link>
     </div>

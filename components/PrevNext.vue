@@ -1,13 +1,13 @@
 <template>
   <div class="prev-next-article uk-flex uk-flex-between uk-link-heading">
     <div class="prev-article">
-      <nuxt-link v-if="prev" :to="prev.path" :title='prev.title'>
+      <nuxt-link v-if="prev && prev.path" :to="prev.path + '/'" :title='prev.title'>
         <i uk-icon="arrow-left"></i>
         {{ prev.title }}
       </nuxt-link>
     </div>
     <div class="next-article">
-      <nuxt-link v-if="next" :to="next.path" :title='next.title'>
+      <nuxt-link v-if="next && prev.path" :to="next.path + '/'" :title='next.title'>
         {{ next.title }}
         <i uk-icon="arrow-right"></i>
       </nuxt-link>
