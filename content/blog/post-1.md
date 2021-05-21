@@ -1,6 +1,6 @@
 ---
 title: Blog Post 1
-image: 'github-wide.png'
+image: 'nuxt.png'
 description: "Curae omnis? Minima aut. Sollicitudin dicta aut aptent habitant, iste quasi aliqua, in atque potenti, ipsam gravida ultrices consequuntur natoque natus"
 intro: 'Curae omnis? Minima aut. Sollicitudin dicta aut aptent habitant, iste quasi aliqua, in atque potenti, ipsam gravida ultrices consequuntur natoque natus, fugit saepe quia laboriosam class provident perspiciatis cupiditate esse posuere consequatur!'
 ---

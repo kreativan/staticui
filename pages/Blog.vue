@@ -4,17 +4,10 @@
     <div class="uk-section">
       <div class="uk-container">
         <nuxt-content :document="page" />
-        <ul class="uk-list uk-list-divider uk-list-large">
-          <li v-for='post in posts' :key="post.slug">
-            <ArticleIntro 
-              :img='post.image'
-              :title='post.title' 
-              :text='post.intro' 
-              :href='post.path'
-              :meta='meta(post.createdAt, post.updatedAt)'
-            />
-          </li>
-        </ul>
+        <template v-for='(post, index) in posts'>
+          <hr v-if='index > 0' class="uk-margin-medium" :key='index' />
+          <ArticleIntro :key='post.slug' :article='post' :index='index'  />
+        </template>
       </div>
     </div>
   </main>
@@ -48,19 +41,8 @@ export default {
     const posts = await this.$content('blog')
     .sortBy("createdAt", 'desc')
     .fetch()
-
-    console.log(posts);
-
     this.posts = posts
   },
-  methods: {
-    meta(createdDate, updatedDate) {
-      const options = { year: 'numeric', month: 'long', day: 'numeric' }
-      let created = new Date(createdDate).toLocaleDateString('en-US', options)
-      let updated = new Date(updatedDate).toLocaleDateString('en-US', options)
-      return `Created on: ${created}, modified: ${updated}`
-    }
-  }
 }
 </script>
 
