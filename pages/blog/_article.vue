@@ -33,7 +33,7 @@ export default {
   },
   async asyncData({ $content, params, error }) {
     try {
-      const page = await $content(`blog/${params.article}`).fetch()
+      const page = await $content(`blog`, params.article).fetch()
       const [prev, next] = await $content('blog')
       .only(['title', 'slug'])
       .sortBy('createdAt', 'asc')
