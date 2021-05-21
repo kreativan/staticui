@@ -9,12 +9,8 @@
     <template>
       <hr class="uk-margin-medium" />
       <PrevNext 
-        :prevTitle="prev ? prev.title : ''"
-        :prevLink="prev ? prev.path : ''"
-        :nextTitle="next ? next.title : ''"
-        :nextLink="next ? next.path : ''"
-        :prev='prevPage'
-        :next='nextPage'
+        :prevPage='prevPage'
+        :nextPage='nextPage'
       />
     </template>
   </article>
