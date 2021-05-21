@@ -6,6 +6,13 @@
     </p>
     <img v-if="image" :srcSet="image.srcSet" :src="image.src" class="uk-margin-bottom" />
     <nuxt-content :document="page" />
+    <template v-if='prev || next'>
+      <hr class="uk-margin-medium" />
+      <PrevNext 
+        :prev='prev'
+        :next='next'
+      />
+    </template>
   </article>
 </template>
 
@@ -26,8 +33,13 @@ export default {
   },
   async asyncData({ $content, params, error }) {
     try {
-      const page = await $content('blog', params.article).fetch()
-      return { page }
+      const page = await $content(`blog/${params.article}`).fetch()
+      const [prev, next] = await $content('blog')
+      .only(['title', 'slug'])
+      .sortBy('createdAt', 'asc')
+      .surround(params.article, { before: 1, after: 1})
+      .fetch()
+      return { page, prev, next }
     } catch (e) {
       error({ statusCode: 404, message: 'Post not found' })
     }
