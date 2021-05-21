@@ -1,26 +1,22 @@
 <template>
   <div class="prev-next-article uk-flex uk-flex-between uk-link-heading">
-    <div class="prev-article">
-      <nuxt-link v-if="prev && prev.path" :to="prev.path + '/'" :title='prev.title'>
-        <i uk-icon="arrow-left"></i>
-        {{ prev.title }}
-      </nuxt-link>
+    <div class="prev-article"> 
+      <template v-if='prevLink'>
+        <nuxt-link :to='prevLink'>{{ prevTitle }}</nuxt-link>
+      </template>
     </div>
     <div class="next-article">
-      <nuxt-link v-if="next && prev.path" :to="next.path + '/'" :title='next.title'>
-        {{ next.title }}
-        <i uk-icon="arrow-right"></i>
-      </nuxt-link>
+      <template v-if='nextLink'>
+        <nuxt-link :to='nextLink'>{{ nextTitle }}</nuxt-link>
+      </template>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  props: {
-    prev: Object,
-    next: Object
-  }
+  props: ['prevLink', 'prevTitle', 'nextLink', 'nextTitle',],
+  
 }
 </script>
 

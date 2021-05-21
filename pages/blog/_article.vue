@@ -9,8 +9,10 @@
     <template v-if='prev || next'>
       <hr class="uk-margin-medium" />
       <PrevNext 
-        :prev='prev'
-        :next='next'
+        :prevTitle="prev ? prev.title : ''"
+        :prevLink="prev ? prev.path : ''"
+        :nextTitle="next ? next.title : ''"
+        :nextLink="next ? next.path : ''"
       />
     </template>
   </article>
@@ -33,11 +35,11 @@ export default {
   },
   async asyncData({ $content, params, error }) {
     try {
-      const page = await $content(`blog`, params.slug).fetch()
+      const page = await $content(`blog`, params.article).fetch()
       const [prev, next] = await $content('blog')
       .only(['title', 'slug'])
       .sortBy('createdAt', 'asc')
-      .surround(params.slug, { before: 1, after: 1})
+      .surround(params.article, { before: 1, after: 1})
       .fetch()
       return { page, prev, next }
     } catch (e) {
