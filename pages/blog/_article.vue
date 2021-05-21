@@ -9,8 +9,9 @@
     <template>
       <hr class="uk-margin-medium" />
       <PrevNext 
-        :prevPage='prev'
-        :nextPage='next'
+        :root='root'
+        :prev='prev'
+        :next='next'
       />
     </template>
   </article>
@@ -39,7 +40,7 @@ export default {
       .sortBy('createdAt', 'asc')
       .surround(params.article, { before: 1, after: 1})
       .fetch()
-      return { page, prev, next }
+      return { page, prev, next, root: 'blog' }
     } catch (e) {
       error({ statusCode: 404, message: 'Post not found' })
     }
