@@ -1,6 +1,6 @@
 <template>
   <main id="main">
-  
+
     <PageHeading :title="page.title" />
 
     <div class="uk-section">
@@ -9,7 +9,7 @@
         <nuxt-content :document="page" />
 
         <template v-for='(posts, i) in postsArray'>
-          <div class="uk-margin-medium-top" :key='i'>
+          <div :class="{'uk-margin-medium-top': i > 0}" :key='i'>
             <hr v-if='i > 0' class="uk-margin-medium" />
             <template v-for='(post, index) in posts'>
               <hr v-if='index > 0' class="uk-margin-medium" :key='index' />
