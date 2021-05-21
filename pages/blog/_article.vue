@@ -6,13 +6,15 @@
     </p>
     <img v-if="image" :srcSet="image.srcSet" :src="image.src" class="uk-margin-bottom" />
     <nuxt-content :document="page" />
-    <template v-if='prev || next'>
+    <template>
       <hr class="uk-margin-medium" />
       <PrevNext 
         :prevTitle="prev ? prev.title : ''"
         :prevLink="prev ? prev.path : ''"
         :nextTitle="next ? next.title : ''"
         :nextLink="next ? next.path : ''"
+        :prev='prevPage'
+        :next='nextPage'
       />
     </template>
   </article>
@@ -61,6 +63,12 @@ export default {
         return false;
       }
     },
+    prevPage() {
+      return this.prev
+    },
+    nextPage() {
+      return this.next
+    }
   },
 }
 </script>

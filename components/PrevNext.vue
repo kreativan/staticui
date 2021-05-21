@@ -1,22 +1,17 @@
 <template>
   <div class="prev-next-article uk-flex uk-flex-between uk-link-heading">
     <div class="prev-article"> 
-      <template v-if='prevLink'>
-        <nuxt-link :to='prevLink'>{{ prevTitle }}</nuxt-link>
-      </template>
+      <nuxt-link v-if='prevLink' :to='prevLink'>{{ prevTitle }}</nuxt-link>
     </div>
     <div class="next-article">
-      <template v-if='nextLink'>
-        <nuxt-link :to='nextLink'>{{ nextTitle }}</nuxt-link>
-      </template>
+       <nuxt-link v-if='nextLink' :to='nextLink'>{{ nextTitle }}</nuxt-link>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  props: ['prevLink', 'prevTitle', 'nextLink', 'nextTitle',],
-  
+  props: ['prevLink', 'prevTitle', 'nextLink', 'nextTitle', 'prevPage', 'nextPage']
 }
 </script>
 
